@@ -2,7 +2,7 @@
 # It contains the class Game
 # This class holds all of the rock paper scissor logic and processing
 class Game
-  def initialize(throw)
+  def initialize(throw, opt = {})
     @outcomes = {
       rock:     { scissors: true, paper: false, rock: :tie },
       paper:    { rock: true, scissors: false, paper: :tie },
@@ -10,6 +10,7 @@ class Game
     }
     @throw = throw.downcase.to_sym if @outcomes.include?(throw.downcase.to_sym)
     @cpu_throw = @outcomes.keys.sample
+    @cpu_throw = opt[:cpu_throw].downcase.to_sym if opt[:cpu_throw]
   end
 
   def results

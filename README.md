@@ -15,3 +15,9 @@ https://github.com/bbatsov/ruby-style-guide
 Run these style validations locally from application root directory:
 * rubocop app/models/
 * rubocop app/controllers/
+* rubocop spec/api/
+
+## Rspec Tests
+From application root directory:
+* rspec spec/api/
+

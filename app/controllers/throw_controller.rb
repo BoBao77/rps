@@ -3,7 +3,10 @@
 class ThrowController < ApplicationController
   def play
     @results = Game.new(params[:sign]).results
-    render :index
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @results }
+    end
   end
 
   def index
