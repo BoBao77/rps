@@ -8,7 +8,7 @@ class Game
       paper:    { rock: true, scissors: false, paper: :tie },
       scissors: { paper: true, rock: false, scissors: :tie }
     }
-    @outcomes.include?(throw.downcase.to_sym) ? @throw = throw.downcase.to_sym : @throw = @outcomes.keys.sample
+    @throw = throw.downcase.to_sym if @outcomes.include?(throw.downcase.to_sym)
     @cpu_throw = @outcomes.keys.sample
   end
 
