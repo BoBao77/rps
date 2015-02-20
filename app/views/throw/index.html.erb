@@ -1,0 +1,15 @@
+<%= form_tag("/throw",method: "post") do %>
+    <label>Let's Play Rock Paper Scissors. Choose wisely the server is pretty good at this game...</label>
+    <select name="sign">
+      <option value="rock"> rock </option>
+      <option value="paper"> paper </option>
+      <option value="scissors"> scissors </option>
+    </select>
+    <input type="submit" value="Lets Rock Paper Scissors Roll">
+<% end  %>
+
+<% if @results %>
+  <p>
+  <%= "You threw #{@results[:throw]} and the server threw #{@results[:cpu_throw]}. #{@results[:message]}" %>
+  <p>
+<% end %>
